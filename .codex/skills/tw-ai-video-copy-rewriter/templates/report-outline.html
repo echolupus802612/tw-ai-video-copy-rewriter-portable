@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{report_title}}</title>
+  <style>
+    body{margin:0;background:#f6f7fb;color:#20242c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",Arial,sans-serif;line-height:1.72}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
+    .card{background:#fff;border:1px solid #e5e7ef;border-radius:20px;padding:24px;margin:16px 0}
+    .hero{background:linear-gradient(135deg,#1f2937,#4038a8,#6d5dfc);color:#fff}
+    .table-wrap{overflow:auto}
+    table{width:100%;border-collapse:collapse;min-width:820px}
+    th,td{padding:12px;border-bottom:1px solid #e5e7ef;vertical-align:top;text-align:left}
+    th{background:#f3f5ff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card hero">
+      <h1>{{report_title}}</h1>
+      <p>{{report_summary}}</p>
+    </section>
+    <section class="card"><h2>素材與證據</h2>{{evidence_html}}</section>
+    <section class="card"><h2>旁白轉錄與可信度</h2>{{transcript_confidence_html}}</section>
+    <section class="card"><h2>重點摘要</h2>{{executive_summary_html}}</section>
+    <section class="card"><h2>原影片拆解</h2>{{copy_analysis_html}}</section>
+    <section class="card"><h2>逐句機制對照</h2><div class="table-wrap">{{line_mechanics_html}}</div></section>
+    <section class="card"><h2>爆火原因</h2>{{viral_analysis_html}}</section>
+    <section class="card"><h2>節奏地圖</h2><div class="table-wrap">{{rhythm_map_html}}</div></section>
+    <section class="card"><h2>改寫策略</h2>{{rewrite_strategy_html}}</section>
+    <section class="card"><h2>可拍攝腳本</h2><div class="table-wrap">{{script_table_html}}</div>{{full_script_html}}</section>
+    <section class="card"><h2>製作建議</h2>{{production_notes_html}}</section>
+    <section class="card"><h2>執行清單</h2>{{execution_checklist_html}}</section>
+    <section class="card"><h2>匹配度檢查</h2>{{match_check_html}}</section>
+  </div>
+</body>
+</html>
