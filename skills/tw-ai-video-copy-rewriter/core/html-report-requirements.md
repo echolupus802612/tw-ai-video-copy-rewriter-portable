@@ -19,6 +19,7 @@ The HTML file is for company-wide internal reading. Its purpose is layout, hiera
 - Include a short executive summary card, but keep the complete detailed sections below it.
 - Include a table of contents with anchor links.
 - Format rhythm maps and rewritten scripts as readable HTML tables.
+- Visually prioritize the production-critical sections: 「改寫版腳本」「製作建議」「執行清單」 should receive the clearest hierarchy and the most usable table/card layout.
 - Use employee-friendly section labels such as: 「重點摘要」「素材與證據」「旁白轉錄與可信度」「原影片拆解」「逐句機制對照」「爆火原因」「節奏地圖」「改寫策略」「可拍攝腳本」「製作建議」「執行清單」「匹配度檢查」.
 - For production teams, add a dedicated 「執行清單」 section that extracts shoot/edit/action items from the analysis without deleting the original details.
 - If screenshots, sampled frames, or local media paths are available and safe to reference, include them as optional evidence thumbnails or file references. If not, state what evidence was used instead.

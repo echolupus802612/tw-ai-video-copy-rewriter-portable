@@ -16,6 +16,23 @@ When activated, always do five things:
 
 The rewrite should feel like the same proven format transplanted into the user's AI teaching topic, localized for Taiwanese viewers.
 
+## Unified cross-agent standard
+
+This repository may run under Hermes, OpenClaw, Claude Code, or Codex.
+
+Non-negotiable standard:
+- All agents must follow the same canonical workflow and output order defined in `core/`.
+- Adapters may add host-specific execution notes, but they must not invent a conflicting methodology.
+- If an adapter-specific enhancement conflicts with the canonical core, the canonical core wins.
+
+Priority order for usefulness:
+1. 文案改寫是否能直接拿去拍
+2. 視頻翻拍製作建議是否真的可執行
+3. 分析是否足夠支撐前兩者
+4. HTML 是否好讀
+
+The report is not a performance-art deliverable. It is an operations document for teams who need to write, shoot, edit, and publish.
+
 ## Default Assumption
 
 Assume the source videos are already validated by the market unless the user says otherwise.
@@ -70,6 +87,7 @@ Rules:
 - If another report provides a transcript and it is useful, you may use it, but label it clearly as secondary evidence unless independently verified.
 - If exact ASR is unavailable but caption + frames + transcript fragments strongly align, you may still do a deep analysis; just state the confidence boundary clearly.
 - Avoid fake precision. Do not invent confident metrics, percentages, engagement-rate claims, or comment-pattern claims unless you actually retrieved the underlying evidence.
+- Do not use ROI projections, growth multipliers, or success-rate promises unless the user explicitly provided the underlying data and the calculation can be traced.
 
 ### If the user provides an IG Reels / TikTok / Douyin URL
 Treat the link as a video source that must be inspected, not as plain context.
@@ -179,6 +197,21 @@ When possible, rewrite from mechanism-level mapping:
 - original line / beat
 - what that line is doing psychologically
 - what new line should replace it in the new topic
+
+## Production-first requirement
+
+The most important output sections are:
+- 改寫版腳本
+- 視頻製作建議
+- 執行清單
+
+These sections must be concrete enough that a content writer, on-camera talent, editor, or operator can act on them without guessing what you meant.
+
+Minimum bar:
+- rewritten lines must sound speakable in Taiwanese Mandarin
+- the shot / edit plan must map back to the source rhythm
+- the remake guidance must specify what to preserve, what to replace, and what to show on screen
+- if tradeoffs are needed, preserve the viral mechanism first, then adapt brand-safe wording second
 
 ## Taiwan Localization Rules
 

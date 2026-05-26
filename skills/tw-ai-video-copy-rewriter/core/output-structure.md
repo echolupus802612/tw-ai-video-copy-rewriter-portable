@@ -1,6 +1,11 @@
 # Default Output Structure
 
-Unless the user requests another format, return in this order:
+Unless the user requests another format, return in this order.
+
+Priority note:
+- Keep sections 1-6 rigorous enough to support the conclusion.
+- Spend the most effort on sections 8-10: 改寫版腳本 / 視頻製作建議 / 執行清單.
+- The final report should help a team remake the video, not just admire the analysis.
 
 1. 素材與證據
 - source URL / file when available
@@ -53,6 +58,7 @@ Include:
 - spoken copy
 - on-screen subtitle when useful
 - CTA
+- enough detail that a writer or host can use it directly without reconstructing missing logic
 
 9. 視頻製作建議
 - opening frame
@@ -62,10 +68,12 @@ Include:
 - editing rhythm
 - sound / SFX suggestions
 - key visual payoff
+- for each major recommendation, say what the production team should literally shoot, show, or cut
 
 10. 執行清單
 - extract the direct actions for writer / shooter / editor
 - should be useful even if the reader skips the long analysis
+- organize by role when useful: 文案 / 拍攝 / 剪輯 / 發布
 
 11. 匹配度檢查
 - 文案內容邏輯
