@@ -21,6 +21,12 @@ When the user asks to rewrite or analyze a short video, follow this workflow.
    - rhythm
 5. Rewrite into a Taiwan-facing AI teaching script.
 6. Export a complete self-contained HTML report.
+7. When evidence quality differs, separate:
+   - direct evidence
+   - secondary evidence
+   - inference
+8. When transcript-like material exists, include a confidence note instead of flattening it into fact.
+9. Prefer mechanism-level mapping over flashy unsupported metrics.
 
 ## Source of truth
 
@@ -36,3 +42,12 @@ Default output directory:
 - `./reports/` if inside a project
 - user-specified path if provided
 - `~/Downloads/` if no project output path exists
+
+## Codex reporting preference
+
+When producing the report, prefer the upgraded internal-report style:
+- include a 「素材與證據」 section early
+- include 「旁白轉錄與可信度」 when transcript-like evidence exists
+- include 「逐句機制對照」 or beat mapping when possible
+- include 「執行清單」 for handoff
+- avoid unsupported percentages, engagement-rate claims, or comment-distribution claims unless the underlying evidence was actually retrieved

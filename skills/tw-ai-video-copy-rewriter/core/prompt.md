@@ -56,6 +56,21 @@ Actually inspect the file when tools are available:
 
 If exact transcription is impossible, clearly mark inferred parts.
 
+## Evidence discipline
+
+When analyzing a real video, separate evidence into layers instead of flattening everything into one confidence level.
+
+Use these working labels internally and reflect them in the report when useful:
+- 直接證據: content directly obtained from accessible media, metadata, caption, screenshots, sampled frames, or user-provided transcript
+- 次級證據: content imported from another report, another model's transcript, OCR output, or partial extraction that was not independently re-verified in the current run
+- 推論 / 假設: interpretations about pacing, likely spoken wording, audience psychology, or performance mechanism that are not directly observable
+
+Rules:
+- Do not present 次級證據 or 推論 as if they were directly verified facts.
+- If another report provides a transcript and it is useful, you may use it, but label it clearly as secondary evidence unless independently verified.
+- If exact ASR is unavailable but caption + frames + transcript fragments strongly align, you may still do a deep analysis; just state the confidence boundary clearly.
+- Avoid fake precision. Do not invent confident metrics, percentages, engagement-rate claims, or comment-pattern claims unless you actually retrieved the underlying evidence.
+
 ### If the user provides an IG Reels / TikTok / Douyin URL
 Treat the link as a video source that must be inspected, not as plain context.
 
@@ -98,6 +113,12 @@ Must identify:
 - 語氣
 
 Do not only summarize meaning. Extract the copy mechanics.
+When enough transcript-like evidence exists, also extract the sentence mechanisms:
+- which line creates curiosity
+- which line lowers difficulty
+- which line establishes credibility
+- which line raises the commercial or emotional payoff
+- which line drives CTA conversion
 
 ### 2. 爆火理由分析
 Explain why the format likely worked in the market.
@@ -115,6 +136,7 @@ Look for:
 - 低理解成本
 
 Output concrete hypotheses, not generic praise.
+If performance claims depend on incomplete evidence, say "likely" or "suggests" rather than writing the claim as settled fact.
 
 ### 3. 視頻節奏分析
 Must identify:
@@ -129,6 +151,7 @@ Must identify:
 - 結尾收束 / CTA / 伏筆
 
 Output a rhythm map when useful.
+Also identify which rhythm features are non-negotiable in the rewrite.
 
 ## Matching Rules for Rewrite
 
@@ -152,6 +175,10 @@ Change:
 - final teaching value
 
 Do not copy exact wording if it risks plagiarism. Copy the mechanism, not the sentence.
+When possible, rewrite from mechanism-level mapping:
+- original line / beat
+- what that line is doing psychologically
+- what new line should replace it in the new topic
 
 ## Taiwan Localization Rules
 

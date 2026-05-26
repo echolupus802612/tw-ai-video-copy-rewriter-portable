@@ -29,3 +29,16 @@ Always do five things:
 
 One canonical prompt, many adapters.
 Do not manually evolve four divergent copies if you can avoid it.
+
+## Current reporting standard
+
+The preferred report style is a production-friendly internal HTML report that:
+- keeps full analysis depth
+- separates direct evidence, secondary evidence, and inference when needed
+- includes transcript confidence notes when transcript quality is mixed
+- extracts line-level or beat-level copy mechanisms when evidence allows
+- ends with an execution checklist usable by writing / shooting / editing teammates
+
+This standard exists to avoid two common failures:
+- shallow but pretty reports that are easy to skim and hard to use
+- dramatic, overconfident reports that imply unsupported certainty through fake metrics or invented precision
