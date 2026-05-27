@@ -16,6 +16,23 @@ When activated, always do five things:
 
 The rewrite should feel like the same proven format transplanted into the user's AI teaching topic, localized for Taiwanese viewers.
 
+## Unified cross-agent standard
+
+This repository may run under Hermes, OpenClaw, Claude Code, or Codex.
+
+Non-negotiable standard:
+- All agents must follow the same canonical workflow and output order defined in `core/`.
+- Adapters may add host-specific execution notes, but they must not invent a conflicting methodology.
+- If an adapter-specific enhancement conflicts with the canonical core, the canonical core wins.
+
+Priority order for usefulness:
+1. 文案改寫是否能直接拿去拍
+2. 視頻翻拍製作建議是否真的可執行
+3. 分析是否足夠支撐前兩者
+4. HTML 是否好讀
+
+The report is not a performance-art deliverable. It is an operations document for teams who need to write, shoot, edit, and publish.
+
 ## Default Assumption
 
 Assume the source videos are already validated by the market unless the user says otherwise.
@@ -56,6 +73,24 @@ Actually inspect the file when tools are available:
 
 If exact transcription is impossible, clearly mark inferred parts.
 
+## High-precision visual pass
+
+When local media extraction is available, default to a high-precision visual pass instead of sparse screenshots.
+
+Preferred behavior:
+- extract dense frame samples when feasible, typically around 2 fps for short vertical videos
+- use the dense samples to reconstruct:
+  - first 3-6 seconds stop-scroll structure
+  - subtitle timing and readability windows
+  - demo payoff hold time
+  - talking-head vs result-shot ratio
+  - CTA read window near the ending
+- if useful, summarize the video as 0.5-second or beat-level segments rather than only broad sections
+
+Goal:
+- do not just identify "which sections exist"
+- identify "how long each visual idea stays on screen" and "which shots actually carry persuasion"
+
 ## Evidence discipline
 
 When analyzing a real video, separate evidence into layers instead of flattening everything into one confidence level.
@@ -67,9 +102,12 @@ Use these working labels internally and reflect them in the report when useful:
 
 Rules:
 - Do not present 次級證據 or 推論 as if they were directly verified facts.
-- If another report provides a transcript and it is useful, you may use it, but label it clearly as secondary evidence unless independently verified.
+- Do not use another model's or another agent's report, transcript, or analysis as evidence unless the user explicitly asks for comparison or reuse.
+- Default behavior is to build the analysis from first-party evidence gathered in the current run: media, metadata, caption, OCR, sampled frames, screenshots, and your own extraction.
+- If the user explicitly asks to compare against another report, keep that comparison separate from the main evidence chain.
 - If exact ASR is unavailable but caption + frames + transcript fragments strongly align, you may still do a deep analysis; just state the confidence boundary clearly.
 - Avoid fake precision. Do not invent confident metrics, percentages, engagement-rate claims, or comment-pattern claims unless you actually retrieved the underlying evidence.
+- Do not use ROI projections, growth multipliers, or success-rate promises unless the user explicitly provided the underlying data and the calculation can be traced.
 
 ### If the user provides an IG Reels / TikTok / Douyin URL
 Treat the link as a video source that must be inspected, not as plain context.
@@ -78,7 +116,7 @@ Required behavior:
 1. Try to access and extract the video page or media using available tools.
 2. Prefer direct video download / extraction tools when available, such as browser extraction, platform metadata tools, `yt-dlp`, or other local downloaders.
 3. Retrieve or infer the transcript/audio content when possible.
-4. Inspect visual content when possible through downloaded media, sampled frames, screenshots, or accessible page metadata.
+4. Inspect visual content when possible through downloaded media, dense sampled frames, screenshots, or accessible page metadata.
 5. Analyze the actual video content only after there is enough evidence from transcript, visual frames, screenshots, metadata, or user-provided source material.
 
 Hard rule: do not pretend to have watched or understood a linked video if tools cannot access it.
@@ -180,6 +218,21 @@ When possible, rewrite from mechanism-level mapping:
 - what that line is doing psychologically
 - what new line should replace it in the new topic
 
+## Production-first requirement
+
+The most important output sections are:
+- 改寫版腳本
+- 視頻製作建議
+- 執行清單
+
+These sections must be concrete enough that a content writer, on-camera talent, editor, or operator can act on them without guessing what you meant.
+
+Minimum bar:
+- rewritten lines must sound speakable in Taiwanese Mandarin
+- the shot / edit plan must map back to the source rhythm
+- the remake guidance must specify what to preserve, what to replace, and what to show on screen
+- if tradeoffs are needed, preserve the viral mechanism first, then adapt brand-safe wording second
+
 ## Taiwan Localization Rules
 
 Write in Traditional Chinese by default.
@@ -192,3 +245,4 @@ Follow the companion files in this repository:
 - `core/output-structure.md`
 - `core/html-report-requirements.md`
 - `core/quality-bar.md`
+- `core/runtime-dependencies.md`

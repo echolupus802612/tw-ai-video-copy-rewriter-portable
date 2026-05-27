@@ -17,6 +17,7 @@ Always do five things:
 - `core/output-structure.md` — response order
 - `core/html-report-requirements.md` — HTML export rules
 - `core/quality-bar.md` — quality checks before final output
+- `core/runtime-dependencies.md` — canonical dependency and extraction stack
 
 ## Adapter files
 
@@ -38,7 +39,39 @@ The preferred report style is a production-friendly internal HTML report that:
 - includes transcript confidence notes when transcript quality is mixed
 - extracts line-level or beat-level copy mechanisms when evidence allows
 - ends with an execution checklist usable by writing / shooting / editing teammates
+- uses a standardized report body so every agent outputs the same section order, labels, and table shapes
 
 This standard exists to avoid two common failures:
 - shallow but pretty reports that are easy to skim and hard to use
 - dramatic, overconfident reports that imply unsupported certainty through fake metrics or invented precision
+
+## Canonical runtime stack
+
+The preferred high-precision workflow is:
+1. access the real video through a public URL, browser extraction, or user-provided file
+2. extract media with `yt-dlp` or an equivalent host capability when possible
+3. use `ffmpeg` for audio extraction, duration checks, and frame sampling
+4. use `faster-whisper` for first-party ASR transcript generation
+5. use local OCR to cross-check on-screen subtitle text
+6. generate a self-contained HTML report with the canonical section order
+
+All adapters should aim for this stack by default. If a dependency is missing, the agent should explicitly report the downgrade rather than silently analyzing from weaker evidence.
+
+## Canonical report body
+
+All agents should converge on the same visible report sections:
+1. 重點摘要
+2. 報告資訊
+3. 素材與證據
+4. 旁白轉錄與可信度
+5. 原影片文案內容分析
+6. 逐句機制對照
+7. 爆火理由分析
+8. 視頻節奏分析
+9. 改寫匹配策略
+10. 改寫版腳本
+11. 視頻製作建議
+12. 執行清單
+13. 匹配度檢查
+
+The goal is not visual sameness for its own sake. The goal is that any teammate can open any agent-produced report and immediately know where to find the evidence, mechanism analysis, rewrite, and production handoff.
